@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Anmol Webcraft | Premium Web Development in Gangtok</title>
+    <meta name="description" content="Anmol Webcraft offers modern, professional, premium, and SEO-optimized web development services based in Gangtok, East Sikkim.">
+    <link rel="canonical" href="https://yourdomain.com/">
+    
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com/">
+    <meta property="og:title" content="Anmol Webcraft | Premium Web Development">
+    <meta property="og:description" content="Modern, professional, premium, and SEO-optimized web development services based in Gangtok.">
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Anmol Webcraft",
+      "url": "https://yourdomain.com",
+      "telephone": "+918101314114",
+      "email": "workhomemega@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Gangtok",
+        "addressRegion": "Sikkim",
+        "addressCountry": "IN"
+      },
+      "sameAs": [
+        "https://instagram.com/anmol_shinigami"
+      ]
+    }
+    </script>
+
+    <style>
+        /* CSS Variables */
+        :root {
+            /* Moody Dark Theme Colors */
+            --bg-dark: #0a0c10;
+            --text-primary: #ffffff;
+            --text-secondary: #94a3b8;
+            --accent: #f8fafc;
+            
+            /* Glassmorphism Variables */
+            --glass-bg: rgba(20, 25, 35, 0.4);
+            --glass-bg-hover: rgba(30, 35, 45, 0.6);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --glass-border-highlight: rgba(255, 255, 255, 0.2);
+            --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+            
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Reset & Base */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Fixed Moody Background */
+        .page-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            /* Dark foggy mountain forest background */
+            background-image: url('https://images.unsplash.com/photo-1517409279766-3d2371946002?auto=format&fit=crop&q=80&w=2000');
+            background-size: cover;
+            background-position: center;
+            z-index: -2;
+        }
+        
+        /* Dark Gradient Overlay for Readability */
+        .page-bg::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(135deg, rgba(5,7,12,0.85) 0%, rgba(10,15,25,0.95) 100%);
+            z-index: -1;
+        }
+
+        /* Ambient Glowing Orbs */
+        .ambient-orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.4;
+            z-index: -1;
+            pointer-events: none;
+            animation: float 20s infinite alternate ease-in-out;
+        }
+        .orb-1 {
+            width: 40vw; height: 40vw;
+            background: rgba(147, 197, 253, 0.15); /* Soft blue */
+            top: -10%; left: -10%;
+        }
+        .orb-2 {
+            width: 30vw; height: 30vw;
+            background: rgba(253, 186, 116, 0.1); /* Soft warm */
+            bottom: 10%; right: -5%;
+            animation-delay: -5s;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 { font-weight: 500; line-height: 1.1; letter-spacing: -0.02em; }
+        h1 { font-size: clamp(3rem, 6vw, 5.5rem); margin-bottom: 1.5rem; font-weight: 700; }
+        h2 { font-size: clamp(2rem, 4vw, 3.5rem); margin-bottom: 1rem; }
+        p { color: var(--text-secondary); font-size: 1.1rem; }
+        
+        .highlight { color: var(--accent); font-weight: 600; }
+
+        /* Utility Layout */
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        /* Glassmorphism Utilities */
+        .glass-panel {
+            background: var(--glass-bg);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            box-shadow: var(--glass-shadow);
+        }
+
+        /* Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 0;
+            z-index: 100;
+            transition: var(--transition);
+        }
+        header.scrolled {
+            background: rgba(10, 12, 16, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 1rem 0;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .logo span { color: var(--text-secondary); font-weight: 400; }
+        
+        .nav-links { display: flex; gap: 2.5rem; }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        .nav-links a:hover { color: var(--text-primary); }
+
+        .btn-nav {
+            background: var(--text-primary);
+            color: var(--bg-dark);
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        .btn-nav:hover { transform: scale(1.05); }
+
+        .mobile-toggle {
+            display: none;
+            background: none; border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 6rem;
+            position: relative;
+        }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .hero-content p {
+            max-width: 480px;
+            margin-bottom: 2.5rem;
+            font-size: 1.2rem;
+        }
+        
+        /* Floating Hero Card (Like 31559 right side) */
+        .hero-card {
+            padding: 2.5rem;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: float-slow 8s ease-in-out infinite;
+        }
+        .hero-card-title {
+            font-size: 1.5rem; margin-bottom: 0.5rem; font-weight: 600;
+        }
+        .hero-card-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--glass-border);
+        }
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+        .meta-label { font-size: 0.8rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px;}
+        .meta-value { font-size: 1.1rem; font-weight: 500; }
+        
+        .btn-large {
+            display: block;
+            width: 100%;
+            padding: 1.2rem;
+            background: var(--text-primary);
+            color: var(--bg-dark);
+            text-align: center;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+        .btn-large:hover { box-shadow: 0 0 20px rgba(255,255,255,0.2); transform: translateY(-2px); }
+
+        /* Sections */
+        section { padding: 8rem 0; position: relative; }
+        .section-header { margin-bottom: 4rem; max-width: 600px; }
+        
+        /* Portfolio Grid */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2.5rem;
+        }
+        .project-card {
+            display: flex;
+            flex-direction: column;
+            padding: 1.5rem;
+            transition: var(--transition);
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+            group: hover;
+        }
+        .project-card:hover {
+            background: var(--glass-bg-hover);
+            border-color: var(--glass-border-highlight);
+            transform: translateY(-8px);
+        }
+        .project-img {
+            width: 100%;
+            height: 220px;
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        .project-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .project-card:hover .project-img img { transform: scale(1.08); }
+        
+        /* Pill Tags */
+        .tag-wrap {
+            position: absolute;
+            top: 1rem; left: 1rem;
+            display: flex; gap: 0.5rem;
+        }
+        .tag {
+            background: rgba(10, 12, 16, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 0.4rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            color: var(--text-primary);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .project-info h3 { font-size: 1.4rem; margin-bottom: 0.5rem; }
+        .project-info p { font-size: 0.95rem; margin-bottom: 1rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .project-link {
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
+        }
+        .project-link i { transition: transform 0.3s; }
+        .project-card:hover .project-link i { transform: translateX(5px) scale(1.1); }
+
+        /* Contact & About Section */
+        .split-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+        .about-box { padding: 3rem; }
+        .about-box p { margin-bottom: 1.5rem; }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        .contact-item {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: var(--transition);
+        }
+        .contact-item:hover {
+            background: var(--glass-bg-hover);
+            border-color: var(--glass-border-highlight);
+        }
+        .contact-icon {
+            width: 40px; height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.05);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.2rem;
+        }
+        .contact-item h4 { font-size: 1rem; color: var(--text-secondary); }
+        .contact-item span { font-size: 1.1rem; font-weight: 500; }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 0;
+            border-top: 1px solid var(--glass-border);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 4rem;
+        }
+
+        /* Animations */
+        @keyframes float-slow {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0); }
+        }
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(5%, 5%) scale(1.1); }
+        }
+
+        /* Scroll Reveal Utility Classes */
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-up.active { opacity: 1; transform: translateY(0); }
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+
+        /* Responsive Media Queries */
+        @media (max-width: 1024px) {
+            .hero-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .split-section { grid-template-columns: 1fr; }
+            h1 { font-size: 3.5rem; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links, .btn-nav { display: none; }
+            .mobile-toggle { display: block; }
+            
+            /* Mobile Menu Active State */
+            header.menu-open { background: var(--bg-dark); }
+            .nav-links.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%; left: 0; width: 100%;
+                background: rgba(10, 12, 16, 0.95);
+                backdrop-filter: blur(20px);
+                padding: 2rem 5%;
+                border-bottom: 1px solid var(--glass-border);
+            }
+            .nav-links.active a { font-size: 1.2rem; padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+            
+            .contact-grid { grid-template-columns: 1fr; }
+            section { padding: 5rem 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Layers -->
+    <div class="page-bg"></div>
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container nav-container">
+            <a href="#home" class="logo">
+                Anmol <span>Webcraft</span>
+            </a>
+            
+            <nav class="nav-links" id="nav-links">
+                <a href="#home">Home</a>
+                <a href="#work">Projects</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            
+            <a href="#contact" class="btn-nav">Start Project</a>
+            
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container hero-grid">
+                
+                <!-- Left Text -->
+                <div class="hero-content reveal-up">
+                    <h1>Digital's<br>Perfect<br><span class="highlight">Hideaways</span></h1>
+                    <p>Discover handpicked, fully-optimized, premium web experiences. Unplug from generic templates and reconnect with a website that truly represents your brand.</p>
+                </div>
+
+                <!-- Right Glass Card (Booking/CTA Style) -->
+                <div class="hero-card glass-panel reveal-up delay-2">
+                    <h2 class="hero-card-title">Anmol Webcraft</h2>
+                    <p style="margin-bottom: 1.5rem; font-size: 0.95rem;">Premium Web Development</p>
+                    
+                    <div class="hero-card-meta">
+                        <div class="meta-item" style="flex: 1;">
+                            <span class="meta-label">Location</span>
+                            <span class="meta-value">Gangtok, Sikkim</span>
+                        </div>
+                        <div class="meta-item" style="flex: 1; border-left: 1px solid var(--glass-border); padding-left: 1rem;">
+                            <span class="meta-label">Expertise</span>
+                            <span class="meta-value">Dev & SEO</span>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 1.5rem;">
+                        <div>
+                            <span style="font-size: 1.8rem; font-weight: 700;">100%</span><span style="color: var(--text-secondary); font-size: 0.9rem;"> / responsive</span>
+                        </div>
+                        <div style="font-size: 0.85rem; color: var(--text-secondary);">
+                            <i class="fa-solid fa-star" style="color: #fbbf24;"></i> Premium UI/UX
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="btn-large">Start Building Now</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="work">
+            <div class="container">
+                <div class="section-header reveal-up">
+                    <h2>Featured Cases</h2>
+                    <p>Explore some of my recent professional web development projects built for local businesses.</p>
+                </div>
+
+                <div class="portfolio-grid">
+                    
+                    <!-- Project 1 -->
+                    <a href="https://workhomemega-cmyk.github.io/Bean-Brew-Cafe/" target="_blank" rel="noopener noreferrer" class="project-card glass-panel reveal-up">
+                        <div class="project-img">
+                            <div class="tag-wrap">
+                                <span class="tag">Cafe</span>
+                                <span class="tag"><i class="fa-solid fa-mobile-screen"></i> Mobile UI</span>
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80" alt="Bean and Brew Cafe">
+                        </div>
+                        <div class="project-info">
+                            <h3>Bean & Brew Cafe</h3>
+                            <p>A warm, welcoming online presence perfectly crafted for a local coffee shop, focusing on aesthetic imagery and smooth navigation.</p>
+                            <div class="project-link">View live site <i class="fa-solid fa-arrow-right"></i></div>
+                        </div>
+                    </a>
+
+                    <!-- Project 2 -->
+                    <a href="https://workhomemega-cmyk.github.io/Aura-Barbers-Salon/" target="_blank" rel="noopener noreferrer" class="project-card glass-panel reveal-up delay-1">
+                        <div class="project-img">
+                            <div class="tag-wrap">
+                                <span class="tag">Salon</span>
+                                <span class="tag"><i class="fa-solid fa-bolt"></i> Fast Load</span>
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=800&q=80" alt="Aura Barbers Salon">
+                        </div>
+                        <div class="project-info">
+                            <h3>Aura Barber / Saloon</h3>
+                            <p>Sleek, highly-contrasted, and stylish digital platform reflecting the premium grooming services of the salon.</p>
+                            <div class="project-link">View live site <i class="fa-solid fa-arrow-right"></i></div>
+                        </div>
+                    </a>
+
+                    <!-- Project 3 -->
+                    <a href="https://workhomemega-cmyk.github.io/Altitude-Premium-Gym/" target="_blank" rel="noopener noreferrer" class="project-card glass-panel reveal-up delay-2">
+                        <div class="project-img">
+                            <div class="tag-wrap">
+                                <span class="tag">Fitness</span>
+                                <span class="tag"><i class="fa-solid fa-magnifying-glass"></i> SEO Setup</span>
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80" alt="Altitude Premium Gym">
+                        </div>
+                        <div class="project-info">
+                            <h3>Altitude Premium Gym</h3>
+                            <p>High-energy, conversion-focused web layout built to attract fitness enthusiasts and drive new member sign-ups.</p>
+                            <div class="project-link">View live site <i class="fa-solid fa-arrow-right"></i></div>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- About & Contact Section -->
+        <section id="about">
+            <div class="container split-section">
+                
+                <!-- About Info -->
+                <div class="about-box glass-panel reveal-up">
+                    <h2>Unparalleled Market Access</h2>
+                    <p>I am a passionate student and skilled developer based in Gangtok, East Sikkim. I specialize in building websites that don't just look visually stunning, but perform flawlessly across all devices.</p>
+                    <p>Every line of code is written to ensure fast load times, semantic accessibility, and strict adherence to modern SEO standards.</p>
+                    
+                    <div style="margin-top: 2rem; display: flex; gap: 1rem;">
+                        <span class="tag"><i class="fa-solid fa-code"></i> Clean Code</span>
+                        <span class="tag"><i class="fa-solid fa-gem"></i> Premium UI</span>
+                    </div>
+                </div>
+
+                <!-- Contact Links -->
+                <div id="contact" class="contact-grid">
+                    
+                    <!-- WhatsApp -->
+                    <a href="https://wa.me/918101314114" target="_blank" rel="noopener noreferrer" class="contact-item glass-panel reveal-up delay-1">
+                        <div class="contact-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                        <div>
+                            <h4>Chat Directly</h4>
+                            <span>+91 8101314114</span>
+                        </div>
+                    </a>
+
+                    <!-- Phone -->
+                    <a href="tel:+918101314114" class="contact-item glass-panel reveal-up delay-2">
+                        <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                        <div>
+                            <h4>Call Me</h4>
+                            <span>+91 8101314114</span>
+                        </div>
+                    </a>
+
+                    <!-- Email -->
+                    <a href="mailto:workhomemega@gmail.com" class="contact-item glass-panel reveal-up delay-1">
+                        <div class="contact-icon"><i class="fa-regular fa-envelope"></i></div>
+                        <div>
+                            <h4>Email Address</h4>
+                            <span style="font-size: 0.95rem;">workhomemega@gmail.com</span>
+                        </div>
+                    </a>
+
+                    <!-- Social -->
+                    <a href="https://instagram.com/anmol_shinigami" target="_blank" rel="noopener noreferrer" class="contact-item glass-panel reveal-up delay-2">
+                        <div class="contact-icon"><i class="fa-brands fa-instagram"></i></div>
+                        <div>
+                            <h4>Instagram</h4>
+                            <span>@anmol_shinigami</span>
+                        </div>
+                    </a>
+
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year"></span> Anmol Webcraft. Designed & Developed with precision in Gangtok, Sikkim.</p>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Set dynamic year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const navLinks = document.getElementById('nav-links');
+        const icon = mobileToggle.querySelector('i');
+
+        mobileToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            header.classList.toggle('menu-open');
+            
+            if(navLinks.classList.contains('active')){
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close menu on link click
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                header.classList.remove('menu-open');
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            });
+        });
+
+        // Scroll Reveal Animations via IntersectionObserver
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    // Stop observing once animated
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-up').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
